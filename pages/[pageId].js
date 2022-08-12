@@ -45,7 +45,8 @@ export async function getStaticProps(context) {
 export function getStaticPaths() {
   return {
     paths: [],
-    fallback: true,
+    // Will server-render pages on-demand if the path doesn't exist.
+    fallback: 'blocking',
   };
 }
 
