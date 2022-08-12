@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.wrapper-middle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.wrapper-middle__box {
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "gnotion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.2.4",
+    "notion-client": "^6.13.0",
+    "notion-utils": "^6.12.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-notion-x": "^6.13.3"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.4",
+    "notion-types": "^6.12.6"
+  }
+}
