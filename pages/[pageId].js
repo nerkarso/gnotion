@@ -21,6 +21,10 @@ export default function Page({ recordMap }) {
     <>
       <Head>
         <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_SITE_OG_IMAGE} />
       </Head>
       <NotionRenderer
         components={{ nextImage: Image, nextLink: Link, Code }}
@@ -37,9 +41,13 @@ export default function Page({ recordMap }) {
  * @param {import('next').NextPageContext} context
  */
 export async function getStaticProps(context) {
+  let recordMap = null;
+
   /** @type String  */
-  const pageId = context.params.pageId;
-  const recordMap = await notion.getPage(pageId);
+  let pageId = context.params.pageId;
+  if (pageId !== 'favicon.ico') {
+    recordMap = await notion.getPage(pageId);
+  }
 
   return {
     props: {

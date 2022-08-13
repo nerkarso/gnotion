@@ -6,6 +6,10 @@ export default function Home() {
     <>
       <Head>
         <title>{process.env.NEXT_PUBLIC_SITE_TITLE}</title>
+        <meta name="title" content={process.env.NEXT_PUBLIC_SITE_TITLE} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={process.env.NEXT_PUBLIC_SITE_TITLE} />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_SITE_OG_IMAGE} />
       </Head>
       <main className="wrapper-middle">
         <div className="wrapper-middle__box">
