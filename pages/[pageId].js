@@ -1,3 +1,4 @@
+import { useColorScheme } from '@mantine/hooks';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { getPageTitle } from 'notion-utils';
@@ -8,6 +9,8 @@ import notion from '../utils/notion';
  * @param {{ recordMap: import('notion-types').ExtendedRecordMap }} props
  */
 export default function Page({ recordMap }) {
+  const colorScheme = useColorScheme();
+
   if (!recordMap) return null;
 
   const title = getPageTitle(recordMap);
@@ -18,10 +21,11 @@ export default function Page({ recordMap }) {
         <title>{title}</title>
       </Head>
       <NotionRenderer
-        recordMap={recordMap}
+        components={{ Code }}
+        darkMode={colorScheme === 'dark'}
         disableHeader={true}
         fullPage={true}
-        components={{ Code }}
+        recordMap={recordMap}
       />
     </>
   );
@@ -54,6 +58,4 @@ export function getStaticPaths() {
  * Optional Components
  */
 
-const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then((m) => m.Code),
-);
+const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code));

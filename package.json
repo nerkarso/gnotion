@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/hooks": "^5.1.4",
     "next": "12.2.4",
     "notion-client": "^6.13.0",
     "notion-utils": "^6.12.9",
