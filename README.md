@@ -11,6 +11,7 @@ Create a `.env` file and add the following:
 REVALIDATE_TOKEN="gnotion"
 NEXT_PUBLIC_SITE_TITLE=""
 NEXT_PUBLIC_SITE_FAVICON=""
+NEXT_PUBLIC_THEME_FONT_FAMILY="Proxima Nova"
 NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
 ```
 

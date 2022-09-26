@@ -30,6 +30,7 @@ export default function Page({ recordMap }) {
         {
           /* css */ `
             :root {
+              --notion-font: 'Proxima Nova', system-ui, sans-serif;
               --select-color-0: ${process.env.NEXT_PUBLIC_THEME_PRIMARY_COLOR};
               --neutral-color: hsl(220, 8%, 25%);
             }
