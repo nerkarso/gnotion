@@ -41,6 +41,15 @@ export default function Page({ recordMap }) {
               --bg-color-2: hsla(220, 8%, 10%, 0.15);
               --fg-color-0: var(--neutral-color);
               --fg-color-5: var(--neutral-color);
+              --notion-blue_background_co: rgb(29, 40, 46);
+              --notion-teal_background_co: rgb(34, 43, 38);
+              --notion-yellow_background_co: rgb(57, 46, 30);
+              --notion-purple_background_co: rgb(43, 36, 49);
+              --notion-pink_background_co: rgb(48, 34, 40);
+              --notion-red_background_co: rgb(54, 36, 34);
+              --notion-orange_background_co: rgb(56, 40, 30);
+              --notion-gray_background_co: rgb(37, 37, 37);
+              --notion-brown_background_co: rgb(47, 39, 35);
             }
           `
         }

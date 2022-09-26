@@ -30,7 +30,8 @@ body {
 .notion-page-icon-hero {
   left: initial;
 }
-.notion-page-icon-hero.notion-page-icon-span {
+.notion-page-icon-hero.notion-page-icon-span,
+.notion-page-icon-hero.notion-page-icon-image {
   margin-left: initial;
 }
 
