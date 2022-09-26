@@ -27,6 +27,7 @@ export default function Page({ recordMap }) {
         <meta property="og:image" content={process.env.NEXT_PUBLIC_SITE_OG_IMAGE} />
       </Head>
       <NotionRenderer
+        showTableOfContents
         components={{ nextImage: Image, nextLink: Link, Code }}
         darkMode={colorScheme === 'dark'}
         disableHeader={true}

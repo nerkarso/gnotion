@@ -18,6 +18,7 @@
     "react-notion-x": "^6.13.10"
   },
   "devDependencies": {
+    "@types/react": "18.0.21",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "notion-types": "^6.13.4"
