@@ -12,6 +12,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-notion-x: ^6.13.10
+  typescript: ^4.8.3
 
 dependencies:
   '@mantine/hooks': 5.4.1_react@18.2.0
@@ -27,6 +28,7 @@ devDependencies:
   eslint: 8.24.0
   eslint-config-next: 12.3.1_7ilbxdl5iguzcjriqqcg2m5cku
   notion-types: 6.13.4
+  typescript: 4.8.3
 
 packages:
 
