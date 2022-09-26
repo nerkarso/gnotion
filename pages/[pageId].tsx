@@ -26,6 +26,24 @@ export default function Page({ recordMap }) {
         <meta property="og:title" content={title} />
         <meta property="og:image" content={process.env.NEXT_PUBLIC_SITE_OG_IMAGE} />
       </Head>
+      <style global jsx>
+        {
+          /* css */ `
+            :root {
+              --select-color-0: ${process.env.NEXT_PUBLIC_THEME_PRIMARY_COLOR};
+              --neutral-color: hsl(220, 8%, 25%);
+            }
+            .dark-mode {
+              --bg-color: hsl(220, 8%, 8%);
+              --bg-color-0: hsl(220, 8%, 15%);
+              --bg-color-1: hsl(220, 8%, 20%);
+              --bg-color-2: hsla(220, 8%, 10%, 0.15);
+              --fg-color-0: var(--neutral-color);
+              --fg-color-5: var(--neutral-color);
+            }
+          `
+        }
+      </style>
       <NotionRenderer
         showTableOfContents
         components={{ nextImage: Image, nextLink: Link, Code }}

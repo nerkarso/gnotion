@@ -8,9 +8,10 @@ Create a `.env` file and add the following:
 
 ```sh
 // You can generate your own random string
-REVALIDATE_TOKEN="h6zz7e7gpx4ia6uz"
+REVALIDATE_TOKEN="gnotion"
 NEXT_PUBLIC_SITE_TITLE=""
 NEXT_PUBLIC_SITE_FAVICON=""
+NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
 ```
 
 ## Incremental Static Regeneration

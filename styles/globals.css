@@ -4,9 +4,11 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  /* Fix overflow caused by table of contents */
+  overflow-x: hidden;
 }
 
+/* Align element middle */
 .wrapper-middle {
   position: absolute;
   height: 100%;
@@ -16,4 +18,28 @@ body {
 }
 .wrapper-middle__box {
   text-align: center;
+}
+
+/* Fix overflow when code block in toggle */
+.notion-toggle {
+  width: 100%;
+}
+
+/* Align icon left */
+.notion-page-icon-hero {
+  left: initial;
+}
+.notion-page-icon-hero.notion-page-icon-span {
+  margin-left: initial;
+}
+
+/* Align TOC heading left */
+.notion-aside-table-of-contents {
+  align-items: initial;
+}
+
+/* Code block bg color */
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--bg-color-0);
 }
