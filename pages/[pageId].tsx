@@ -1,6 +1,6 @@
 import { useColorScheme } from '@mantine/hooks';
+import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getPageTitle } from 'notion-utils';
@@ -29,13 +29,19 @@ export default function Page({ recordMap }) {
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="title" content={title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:image" content={ogImageUrl} />
-      </Head>
+      <NextSeo
+        defaultTitle={title}
+        openGraph={{
+          images: [
+            {
+              url: ogImageUrl,
+              width: 1200,
+              height: 630,
+              alt: title,
+            },
+          ],
+        }}
+      />
       <style global jsx>
         {
           /* css */ `

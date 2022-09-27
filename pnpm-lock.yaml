@@ -8,6 +8,7 @@ specifiers:
   eslint-config-next: 12.3.1
   next: 12.3.1
   next-api-og-image: ^4.3.0
+  next-seo: ^5.5.0
   notion-client: ^6.13.8
   notion-types: ^6.13.4
   notion-utils: ^6.13.4
@@ -21,6 +22,7 @@ dependencies:
   chrome-aws-lambda: 6.0.0_puppeteer-core@6.0.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   next-api-og-image: 4.3.0_5ilkx3sc7jgl7bkbl65drinjcy
+  next-seo: 5.5.0_azq6kxkn3od7qdylwkyksrwopy
   notion-client: 6.13.8
   notion-utils: 6.13.4
   react: 18.2.0
@@ -2543,6 +2545,18 @@ packages:
       - bufferutil
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /next-seo/5.5.0_azq6kxkn3od7qdylwkyksrwopy:
+    resolution: {integrity: sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 12.3.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/12.3.1_biqbaboplfbrettd7655fr4n2y:
