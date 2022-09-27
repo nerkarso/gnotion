@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mantine/hooks": "^5.4.1",
-    "chrome-aws-lambda": "^10.1.0",
+    "chrome-aws-lambda": "^1.20.4",
     "next": "12.3.1",
     "next-api-og-image": "^4.3.0",
     "notion-client": "^6.13.8",
