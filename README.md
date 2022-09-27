@@ -15,6 +15,12 @@ NEXT_PUBLIC_THEME_FONT_FAMILY="Proxima Nova"
 NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
 ```
 
+## Generate Open Graph Image
+
+```sh
+http://localhost:3000/api/og-image?subtitle=Docs&title=Web%20Development&image=https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f4d8.svg
+```
+
 ## Incremental Static Regeneration
 
 Next.js allows you to create or update static pages after you’ve built your site. Starting with v12.2.0, Next.js supports On-Demand Incremental Static Regeneration to manually purge the Next.js cache for a specific page.
