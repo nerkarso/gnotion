@@ -22,8 +22,10 @@ export default withOGImage<'query', 'subtitle' | 'title' | 'image'>({
             <main className="grid place-items-center absolute inset-0">
               <div className="w-full px-16 flex gap-8 items-center">
                 <div className="flex-1">
-                  {subtitle && <h4 className="font-semibold text-4xl text-blue-500">{subtitle}</h4>}
-                  {title && <h1 className="font-semibold text-8xl mt-4">{title}</h1>}
+                  {subtitle && (
+                    <h4 className="font-semibold text-4xl text-blue-500 mb-4">{subtitle}</h4>
+                  )}
+                  {title && <h1 className="font-semibold text-8xl">{title}</h1>}
                 </div>
                 {image && <img src={image} alt="" className="max-w-xs w-full" />}
               </div>

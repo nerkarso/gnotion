@@ -17,6 +17,16 @@ export default function Page({ recordMap }) {
 
   const title = getPageTitle(recordMap);
 
+  const ogImageUrl = process.env.NEXT_PUBLIC_SITE_URL.concat(
+    '/api/og-image?',
+    'subtitle=',
+    process.env.NEXT_PUBLIC_SITE_TITLE,
+    '&title=',
+    title,
+    '&image=',
+    process.env.NEXT_PUBLIC_SITE_FAVICON
+  );
+
   return (
     <>
       <Head>
@@ -24,7 +34,7 @@ export default function Page({ recordMap }) {
         <meta name="title" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:image" content={process.env.NEXT_PUBLIC_SITE_OG_IMAGE} />
+        <meta property="og:image" content={ogImageUrl} />
       </Head>
       <style global jsx>
         {
