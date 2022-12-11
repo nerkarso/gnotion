@@ -2,6 +2,15 @@
 
 Turn your Notion pages into a website with instant page loads and SEO optimization.
 
+## Usage
+
+Let's assume you have this [Notion page](https://www.notion.so/nerkarso/Example-8a3e3cf883454b9ca073b125e88715b4) and you want to turn it into a website, then follow these steps:
+
+1. Open Notion page.
+2. **Share** > toggle **Share to web**.
+3. Turn this: `https://www.notion.so/nerkarso/Example-8a3e3cf883454b9ca073b125e88715b4`
+4. Into this: `http://localhost:3000/Example-8a3e3cf883454b9ca073b125e88715b4`
+
 ## Environment Variables
 
 Create a `.env.local` file and add the following:
