@@ -37,8 +37,8 @@ http://localhost:3000/api/og-image?subtitle=Docs&title=Web%20Development&image=h
 Next.js allows you to create or update static pages after you’ve built your site. Starting with v12.2.0, Next.js supports On-Demand Incremental Static Regeneration to manually purge the Next.js cache for a specific page.
 
 ```sh
-curl http://localhost:3000/api/revalidate?secret=xxxxxx&path=/path/to
+curl http://localhost:3000/api/revalidate?token=xxxxxx&path=/path/to
 ```
 
-- `secret`: replace with your `REVALIDATE_TOKEN`.
+- `token`: replace with your `REVALIDATE_TOKEN`.
 - `path`: the exact path that you want revalidated.
