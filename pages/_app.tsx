@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_SITE_FAVICON} type="image/png" />
+        <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON} type="image/png" />
       </Head>
       <DefaultSeo
         defaultTitle={process.env.NEXT_PUBLIC_SITE_TITLE}

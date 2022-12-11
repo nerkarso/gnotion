@@ -3,14 +3,16 @@ import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ExtendedRecordMap } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
 import { NotionRenderer } from 'react-notion-x';
 import notion from '../utils/notion';
 
-/**
- * @param {{ recordMap: import('notion-types').ExtendedRecordMap }} props
- */
-export default function Page({ recordMap }) {
+type TProps = {
+  recordMap: ExtendedRecordMap;
+};
+
+export default function Page({ recordMap }: TProps) {
   const colorScheme = useColorScheme();
 
   if (!recordMap) return null;
@@ -24,7 +26,7 @@ export default function Page({ recordMap }) {
     '&title=',
     title,
     '&image=',
-    process.env.NEXT_PUBLIC_SITE_FAVICON
+    process.env.NEXT_PUBLIC_FAVICON
   );
 
   return (

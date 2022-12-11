@@ -4,13 +4,15 @@ Turn your Notion pages into a website with instant page loads and SEO optimizati
 
 ## Environment Variables
 
-Create a `.env` file and add the following:
+Create a `.env.local` file and add the following:
 
 ```sh
-// You can generate your own random string
 REVALIDATE_TOKEN="gnotion"
-NEXT_PUBLIC_SITE_TITLE=""
-NEXT_PUBLIC_SITE_FAVICON=""
+NEXT_PUBLIC_FAVICON="/img/favicon.png"
+NEXT_PUBLIC_OG_IMAGE="/img/og-image.png"
+NEXT_PUBLIC_PLACEHOLDER_IMAGE="/img/placeholder.png"
+NEXT_PUBLIC_SITE_TITLE="Docs"
+NEXT_PUBLIC_SITE_URL="https://gnotion.vercel.app"
 NEXT_PUBLIC_THEME_FONT_FAMILY="Proxima Nova"
 NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
 ```
@@ -18,7 +20,7 @@ NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
 ## Generate Open Graph Image
 
 ```sh
-http://localhost:3000/api/og-image?subtitle=Docs&title=Web%20Development&image=https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f4d8.svg
+http://localhost:3000/api/og-image?subtitle=Docs&title=Web%20Development&image=https://gnotion.vercel.app/img/placeholder.png
 ```
 
 ## Incremental Static Regeneration
