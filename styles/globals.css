@@ -9,6 +9,13 @@ body {
   overflow-x: hidden;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(220, 8%, 8%);
+    color: hsl(220, 8%, 100%);
+  }
+}
+
 /* Align element middle */
 .wrapper-middle {
   position: absolute;
