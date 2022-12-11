@@ -18,12 +18,12 @@ export default withOGImage<'query', 'subtitle' | 'title' | 'image'>({
             />
             <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
           </head>
-          <body className="bg-gray-900 text-white" style={{ fontFamily: 'Inter' }}>
+          <body className="bg-black text-white" style={{ fontFamily: 'Inter' }}>
             <main className="grid place-items-center absolute inset-0">
               <div className="w-full px-16 flex gap-8 items-center">
                 <div className="flex-1">
                   {subtitle && (
-                    <h4 className="font-semibold text-4xl text-blue-500 mb-4">{subtitle}</h4>
+                    <h4 className="font-semibold text-4xl opacity-75 mb-4">{subtitle}</h4>
                   )}
                   {title && <h1 className="font-semibold text-8xl">{title}</h1>}
                 </div>

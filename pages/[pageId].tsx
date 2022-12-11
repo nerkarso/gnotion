@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { ExtendedRecordMap } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
 import { useState } from 'react';
-import { NotionRenderer } from 'react-notion-x';
+import { NotionRenderer, PageIconImpl } from 'react-notion-x';
 import notion from '../utils/notion';
 
 type TProps = {
@@ -20,6 +20,7 @@ export default function Page({ recordMap }: TProps) {
   if (!recordMap) return null;
 
   const title = getPageTitle(recordMap);
+  const icon = getPageIcon(recordMap, process.env.NEXT_PUBLIC_PLACEHOLDER_IMAGE);
 
   const ogImageUrl = process.env.NEXT_PUBLIC_SITE_URL.concat(
     '/api/og-image?',
@@ -28,7 +29,7 @@ export default function Page({ recordMap }: TProps) {
     '&title=',
     title,
     '&image=',
-    process.env.NEXT_PUBLIC_FAVICON
+    icon
   );
 
   return (
@@ -121,6 +122,18 @@ export function getStaticPaths() {
 const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code), {
   ssr: false,
 });
+
+function getPageIcon(recordMap: ExtendedRecordMap, defaultIcon?: string) {
+  let icon = defaultIcon;
+  const pageBlock = recordMap.block[Object.keys(recordMap.block)[0]]?.value;
+
+  if (pageBlock) {
+    const elem = PageIconImpl({ block: pageBlock, defaultIcon });
+    icon = encodeURIComponent(elem.props.children.props.src);
+  }
+
+  return icon;
+}
 
 function RevalidateButton() {
   const router = useRouter();
