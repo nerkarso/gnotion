@@ -81,7 +81,7 @@ export default function Page({ error, recordMap }: TProps) {
       </style>
       <NotionRenderer
         showTableOfContents
-        components={{ nextImage: Image, nextLink: Link, Code }}
+        components={{ nextImage: Image, nextLink: Link, Code, Collection }}
         darkMode={colorScheme === 'dark'}
         disableHeader={true}
         fullPage={true}
@@ -134,3 +134,10 @@ export function getStaticPaths() {
 const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code), {
   ssr: false,
 });
+
+const Collection = dynamic(
+  () => import('react-notion-x/build/third-party/collection').then((m) => m.Collection),
+  {
+    ssr: false,
+  }
+);
