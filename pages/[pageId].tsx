@@ -79,14 +79,17 @@ export default function Page({ error, recordMap }: TProps) {
           `
         }
       </style>
-      <NotionRenderer
-        showTableOfContents
-        components={{ nextImage: Image, nextLink: Link, Code, Collection }}
-        darkMode={colorScheme === 'dark'}
-        disableHeader={true}
-        fullPage={true}
-        recordMap={recordMap}
-      />
+      <div id="container">
+        <NotionRenderer
+          showTableOfContents
+          components={{ nextImage: Image, nextLink: Link, Code, Collection }}
+          darkMode={colorScheme === 'dark'}
+          disableHeader={true}
+          fullPage={true}
+          recordMap={recordMap}
+        />
+        <PrismMac />
+      </div>
       <RevalidateButton />
     </>
   );
@@ -134,6 +137,13 @@ export function getStaticPaths() {
 const Code = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code), {
   ssr: false,
 });
+
+const PrismMac = dynamic(
+  () => import('../components/third-party/PrismMac').then((m) => m.PrismMac),
+  {
+    ssr: false,
+  }
+);
 
 const Collection = dynamic(
   () => import('react-notion-x/build/third-party/collection').then((m) => m.Collection),
