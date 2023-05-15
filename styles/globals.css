@@ -89,3 +89,9 @@ body {
 pre[class*='language-'] {
   background: var(--bg-color-0);
 }
+
+/* Video fit */
+video {
+  width: 100%;
+  height: 100%;
+}
