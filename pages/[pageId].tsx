@@ -119,6 +119,7 @@ export async function getStaticProps(context) {
       error,
       recordMap,
     },
+    revalidate: 60, // In seconds
   };
 }
 
