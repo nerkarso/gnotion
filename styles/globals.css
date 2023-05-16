@@ -91,7 +91,10 @@ pre[class*='language-'] {
 }
 
 /* Video fit */
-video {
+.notion-asset-wrapper-video {
   width: 100%;
-  height: 100%;
+}
+.notion-asset-wrapper-video > div {
+  height: inherit !important;
+  width: inherit !important;
 }
