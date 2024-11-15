@@ -1,7 +1,7 @@
 import { useColorScheme } from '@mantine/hooks';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { ExtendedRecordMap } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
