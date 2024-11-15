@@ -42,3 +42,8 @@ curl http://localhost:3000/api/revalidate?token=xxxxxx&path=/path/to
 
 - `token`: replace with your `NEXT_PUBLIC_REVALIDATE_TOKEN`.
 - `path`: the exact path that you want revalidated.
+
+
+## License
+
+[MIT License](LICENSE)
