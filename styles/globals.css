@@ -1,3 +1,22 @@
+/* Notion */
+.dark-mode {
+  --bg-color: hsl(220, 8%, 8%);
+  --bg-color-0: hsl(220, 8%, 15%);
+  --bg-color-1: hsl(220, 8%, 20%);
+  --bg-color-2: hsla(220, 8%, 10%, 0.15);
+  --fg-color-0: hsl(220, 8%, 25%);
+  --fg-color-5: hsl(220, 8%, 25%);
+  --notion-blue_background_co: rgb(29, 40, 46);
+  --notion-teal_background_co: rgb(34, 43, 38);
+  --notion-yellow_background_co: rgb(57, 46, 30);
+  --notion-purple_background_co: rgb(43, 36, 49);
+  --notion-pink_background_co: rgb(48, 34, 40);
+  --notion-red_background_co: rgb(54, 36, 34);
+  --notion-orange_background_co: rgb(56, 40, 30);
+  --notion-gray_background_co: rgb(37, 37, 37);
+  --notion-brown_background_co: rgb(47, 39, 35);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -25,7 +44,7 @@ body {
   place-items: center;
 }
 .wrapper-middle__box {
-padding: 1rem;
+  padding: 1rem;
   text-align: center;
 }
 .wrapper-middle__box__desc {
@@ -38,6 +57,7 @@ padding: 1rem;
   position: fixed;
   top: 10px;
   right: 10px;
+  z-index: 999;
 }
 .revalidate-button button {
   appearance: none;
