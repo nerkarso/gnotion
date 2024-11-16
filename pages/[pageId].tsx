@@ -72,6 +72,7 @@ export default function Page({ error, recordMap }: TProps) {
           disableHeader={true}
           fullPage={true}
           recordMap={recordMap}
+          minTableOfContentsItems={1}
         />
         <PrismMac />
       </div>

@@ -1,0 +1,25 @@
+diff --git a/build/index.js b/build/index.js
+index 8a46b5f0e8ba70f53649537ec3671b83afb9ca99..1baa36de49c6034dc4efe9dd493523fafc1d3047 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -2655,7 +2655,19 @@ function Block(props) {
+         /* @__PURE__ */ jsx29("div", { children })
+       ] });
+     case "table_of_contents": {
+-      const page = getBlockParentPage2(block, recordMap);
++      let page = getBlockParentPage2(block, recordMap);
++      let _a;
++      const rootId = Object.keys(recordMap.block)[0];
++      const rootPage = (_a = recordMap.block[rootId]) == null ? void 0 : _a.value;
++      const colsId = (_a = rootPage.content[0]) == null ? void 0 : _a;
++      const cols = (_a = recordMap.block[colsId]) == null ? void 0 : _a.value;
++      if (cols.content) {
++        if (cols.content.length > 1) {
++          const colMainId = (_a = cols.content[1]) == null ? void 0 : _a;
++          const colMain = (_a = recordMap.block[colMainId]) == null ? void 0 : _a.value;
++          page = colMain;
++        }
++      }
+       if (!page) return null;
+       const toc = getPageTableOfContents(page, recordMap);
+       const blockColor = (_F = block.format) == null ? void 0 : _F.block_color;

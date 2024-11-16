@@ -31,7 +31,8 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "notion-utils": "patches/notion-utils.patch"
+      "notion-utils": "patches/notion-utils.patch",
+      "react-notion-x": "patches/react-notion-x.patch"
     }
   }
 }
