@@ -20,6 +20,14 @@ export default function MyApp({ Component, pageProps }) {
           type: 'website',
           url: process.env.NEXT_PUBLIC_SITE_URL,
           site_name: process.env.NEXT_PUBLIC_SITE_TITLE,
+          images: [
+            {
+              url: process.env.NEXT_PUBLIC_OG_IMAGE,
+              width: 1200,
+              height: 630,
+              alt: process.env.NEXT_PUBLIC_SITE_TITLE,
+            },
+          ],
         }}
         twitter={{
           cardType: 'summary_large_image',

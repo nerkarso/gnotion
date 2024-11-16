@@ -25,7 +25,12 @@ body {
   place-items: center;
 }
 .wrapper-middle__box {
+padding: 1rem;
   text-align: center;
+}
+.wrapper-middle__box__desc {
+  opacity: 0.6;
+  word-break: break-all;
 }
 
 /* Revalidate button */

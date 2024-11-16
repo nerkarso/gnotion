@@ -16,7 +16,7 @@ export default function GenericState({ title, message }: TProps) {
           alt="Illustration"
         />
         {title && <h1>{title}</h1>}
-        {message && <h2>{message}</h2>}
+        {message && <p className="wrapper-middle__box__desc">{message}</p>}
       </div>
     </main>
   );

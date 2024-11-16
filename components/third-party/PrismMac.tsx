@@ -6,7 +6,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/show-language/prism-show-language';
 import 'prismjs/plugins/toolbar/prism-toolbar';
 import 'prismjs/plugins/toolbar/prism-toolbar.min.css';
-import React from 'react';
+import { useEffect } from 'react';
 
 const PRISM_JS_PATH = 'https://npm.elemecdn.com/prismjs@1.29.0/components/';
 
@@ -14,7 +14,7 @@ const PRISM_JS_PATH = 'https://npm.elemecdn.com/prismjs@1.29.0/components/';
  * @url https://github.com/tangly1024/NotionNext/blob/main/components/PrismMac.js
  */
 export const PrismMac = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     renderPrismMac();
     renderMermaid();
 
