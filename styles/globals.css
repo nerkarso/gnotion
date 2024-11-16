@@ -123,3 +123,21 @@ pre[class*='language-'] {
   height: inherit !important;
   width: inherit !important;
 }
+
+.notion-full-width {
+  --notion-max-width: calc(min(1920px, 98vw));
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.notion-callout {
+  border-radius: 8px;
+}
+
+.notion-page-link > .notion-page-title > .notion-page-icon-inline:has(svg) {
+  display: none;
+}
+
+.notion-page-link > .notion-page-title > .notion-page-title-text {
+  border-bottom: 0;
+}

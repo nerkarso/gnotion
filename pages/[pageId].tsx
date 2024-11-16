@@ -29,7 +29,6 @@ export default function Page({ error, recordMap }: TProps) {
 
   const title = getPageTitle(recordMap);
   const icon = getPageIcon(recordMap, process.env.NEXT_PUBLIC_PLACEHOLDER_IMAGE);
-
   const ogImageUrl = process.env.NEXT_PUBLIC_SITE_URL.concat(
     '/api/og-image?',
     'subtitle=',
@@ -39,6 +38,15 @@ export default function Page({ error, recordMap }: TProps) {
     '&image=',
     icon
   );
+
+  // Useful for debugging from the DevTools console
+  if (typeof window !== 'undefined') {
+    const keys = Object.keys(recordMap?.block || {});
+    const block = recordMap?.block?.[keys[0]]?.value;
+    const w = window as any;
+    w.recordMap = recordMap;
+    w.block = block;
+  }
 
   return (
     <Layout>
@@ -116,14 +124,10 @@ const Code = dynamic(() => import('react-notion-x/build/third-party/code').then(
 
 const PrismMac = dynamic(
   () => import('../components/third-party/PrismMac').then((m) => m.PrismMac),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
 
 const Collection = dynamic(
   () => import('react-notion-x/build/third-party/collection').then((m) => m.Collection),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
