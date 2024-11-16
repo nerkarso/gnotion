@@ -1,4 +1,5 @@
 import { useColorScheme } from '@mantine/hooks';
+import fs from 'fs/promises';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import Image from 'next/legacy/image';
@@ -22,7 +23,7 @@ export default function Page({ error, recordMap }: TProps) {
   if (error || !recordMap) {
     return (
       <Layout>
-        <GenericState title="Error" message={error.message || 'No data available'} />
+        <GenericState title="Error" message={error?.message || 'No data available'} />
       </Layout>
     );
   }
@@ -90,6 +91,10 @@ export async function getStaticProps(context) {
   if (pageId !== 'favicon.ico') {
     try {
       recordMap = await notion.getPage(pageId);
+      // Useful for debugging
+      if (process.env.NODE_ENV === 'development') {
+        await fs.writeFile(`./coverage/${pageId}.json`, JSON.stringify(recordMap, null, 2));
+      }
     } catch (ex) {
       error = {
         message: ex.message,
