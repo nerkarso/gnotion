@@ -1,0 +1,16 @@
+diff --git a/build/index.js b/build/index.js
+index 0eb1d2265646fc08932aea0f16fe0ce3eb259a03..a20e73afcc5c8642160e9cca00528eabf9b99d94 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -436,6 +436,11 @@ var getBlockParentPage = (block, recordMap, {
+       currentRecord = (_a = recordMap.collection[parentId]) == null ? void 0 : _a.value;
+     } else {
+       currentRecord = (_b = recordMap.block[parentId]) == null ? void 0 : _b.value;
++      if ((currentRecord == null ? void 0 : currentRecord.type) === "column_list") {
++        const parentId2 = currentRecord.content[1] || currentRecord.content[0] || parentId;
++        const currentRecord2 = (_b = recordMap.block[parentId2]) == null ? void 0 : _b.value;
++        if (currentRecord2) return currentRecord2;
++      }
+       if ((currentRecord == null ? void 0 : currentRecord.type) === "page") {
+         return currentRecord;
+       }
