@@ -1,5 +1,5 @@
 diff --git a/build/index.js b/build/index.js
-index 8a46b5f0e8ba70f53649537ec3671b83afb9ca99..1baa36de49c6034dc4efe9dd493523fafc1d3047 100644
+index 8a46b5f0e8ba70f53649537ec3671b83afb9ca99..3f47451d961b166febfcbec3e3e735f75f37a05c 100644
 --- a/build/index.js
 +++ b/build/index.js
 @@ -2655,7 +2655,19 @@ function Block(props) {
@@ -23,3 +23,18 @@ index 8a46b5f0e8ba70f53649537ec3671b83afb9ca99..1baa36de49c6034dc4efe9dd493523fa
        if (!page) return null;
        const toc = getPageTableOfContents(page, recordMap);
        const blockColor = (_F = block.format) == null ? void 0 : _F.block_color;
+@@ -2774,10 +2786,10 @@ function Block(props) {
+       return /* @__PURE__ */ jsx29(EOI, { block, className: blockId });
+     default:
+       if (true) {
+-        console.log(
+-          "Unsupported block type " + block.type,
+-          JSON.stringify(block, null, 2)
+-        );
++        // console.log(
++        //   "Unsupported block type " + block.type,
++        //   JSON.stringify(block, null, 2)
++        // );
+       }
+       return /* @__PURE__ */ jsx29("div", {});
+   }
