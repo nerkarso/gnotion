@@ -1,11 +1,13 @@
 import { useColorScheme } from '@mantine/hooks';
 import fs from 'fs/promises';
+import Cookies from 'js-cookie';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { ExtendedRecordMap } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
+import { useEffect, useState } from 'react';
 import { NotionRenderer } from 'react-notion-x';
 import GenericState from '../components/GenericState';
 import Layout from '../components/Layout';
@@ -18,8 +20,6 @@ type TProps = {
 };
 
 export default function Page({ error, recordMap }: TProps) {
-  const colorScheme = useColorScheme();
-
   if (error || !recordMap) {
     return (
       <Layout>
@@ -64,19 +64,83 @@ export default function Page({ error, recordMap }: TProps) {
           ],
         }}
       />
-      <div id="container">
-        <NotionRenderer
-          showTableOfContents
-          components={{ nextImage: Image, nextLink: Link, Code, Collection }}
-          darkMode={colorScheme === 'dark'}
-          disableHeader={true}
-          fullPage={true}
-          recordMap={recordMap}
-          minTableOfContentsItems={1}
-        />
-        <PrismMac />
-      </div>
+      <PageContent recordMap={recordMap} />
     </Layout>
+  );
+}
+
+function PageContent({ recordMap }: { recordMap: ExtendedRecordMap }) {
+  const colorScheme = useColorScheme();
+  const AUTH_COOKIE_KEY = 'gnotion_auth';
+  const passwords = (process.env.NEXT_PUBLIC_AUTH_PASSWORDS ?? 'gnotion').split(',');
+  const [isAuth, setIsAuth] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const password = formData.get('password') as string;
+    if (passwords.includes(password)) {
+      Cookies.set(AUTH_COOKIE_KEY, 'true', {
+        expires: 60 * 60 * 24 * 1, // 30 days
+      });
+      setIsAuth(true);
+    } else {
+      alert('Incorrect password');
+    }
+  };
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_AUTH_ENABLED === 'true') {
+      const authCookie = Cookies.get(AUTH_COOKIE_KEY);
+      if (authCookie) {
+        if (passwords.includes(authCookie)) {
+          setIsAuth(true);
+        }
+      }
+    }
+  }, []);
+
+  if (!isAuth) {
+    return (
+      <GenericState
+        title="You shall not pass!"
+        message="Please enter a password to access to continue"
+      >
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[var(--bg-color-0)] flex gap-1 p-1 justify-between rounded-lg flex-col sm:flex-row"
+        >
+          <input
+            type="password"
+            className="bg-transparent dark:text-white border-none flex-1 px-2 py-2 rounded [font:inherit] [color-scheme:light_dark]"
+            placeholder="Password"
+            required
+            name="password"
+          />
+          <button
+            className="bg-[var(--bg-color-0)] dark:text-white border-none px-3 py-2 rounded-md [font:inherit] cursor-pointer hover:bg-[var(--select-color-0)] transition"
+            type="submit"
+          >
+            Continue
+          </button>
+        </form>
+      </GenericState>
+    );
+  }
+
+  return (
+    <div id="container">
+      <NotionRenderer
+        showTableOfContents
+        components={{ nextImage: Image, nextLink: Link, Code, Collection }}
+        darkMode={colorScheme === 'dark'}
+        disableHeader={true}
+        fullPage={true}
+        recordMap={recordMap}
+        minTableOfContentsItems={1}
+      />
+      <PrismMac />
+    </div>
   );
 }
 

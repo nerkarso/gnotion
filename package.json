@@ -11,6 +11,7 @@
   "dependencies": {
     "@mantine/hooks": "^7.14.0",
     "chrome-aws-lambda": "^6.0.0",
+    "js-cookie": "^3.0.5",
     "mermaid": "^9.4.3",
     "next": "13.5.7",
     "next-api-og-image": "^4.3.0",
@@ -23,6 +24,7 @@
     "react-notion-x": "^7.2.3"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/react": "18.3.12",
     "autoprefixer": "^10.4.20",
     "eslint": "8.57.1",
