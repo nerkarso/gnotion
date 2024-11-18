@@ -80,7 +80,7 @@ function PageContent({ recordMap }: { recordMap: ExtendedRecordMap }) {
     const formData = new FormData(e.currentTarget);
     const password = formData.get('password') as string;
     if (passwords.includes(password)) {
-      Cookies.set(AUTH_COOKIE_KEY, 'true', {
+      Cookies.set(AUTH_COOKIE_KEY, password, {
         expires: 60 * 60 * 24 * 1, // 30 days
       });
       setIsAuth(true);
