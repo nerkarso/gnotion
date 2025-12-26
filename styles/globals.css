@@ -145,3 +145,34 @@ pre[class*='language-'] {
 .notion-page-link > .notion-page-title > .notion-page-title-text {
   border-bottom: 0;
 }
+
+/**
+ * Iframe styles
+ */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+.iframe-root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(60, 1%, 17%);
+  --border: hsla(40, 93%, 6%, 0.11);
+  --sidebar: hsl(30, 14%, 97%);
+  --sidebar-foreground: hsl(38, 3%, 47%);
+
+  --header-offset: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .iframe-root {
+    --background: hsl(0, 0%, 10%);
+    --foreground: hsl(40, 9%, 94%);
+    --border: hsla(0, 0%, 100%, 0.095);
+    --sidebar: hsl(0, 0%, 13%);
+    --sidebar-foreground: hsl(0, 0%, 61%);
+
+    color-scheme: dark;
+  }
+}
