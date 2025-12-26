@@ -13,20 +13,7 @@ Let's assume you have this [Notion page](https://www.notion.so/nerkarso/Example-
 
 ## Environment Variables
 
-Create a `.env.local` file and add the following:
-
-```sh
-NEXT_PUBLIC_FAVICON="/img/favicon.png"
-NEXT_PUBLIC_OG_IMAGE="/img/og-image.png"
-NEXT_PUBLIC_PLACEHOLDER_IMAGE="/img/placeholder.png"
-NEXT_PUBLIC_REVALIDATE_TOKEN="gnotion"
-NEXT_PUBLIC_SITE_TITLE="Docs"
-NEXT_PUBLIC_SITE_URL="https://gnotion.vercel.app"
-NEXT_PUBLIC_THEME_FONT_FAMILY="Proxima Nova"
-NEXT_PUBLIC_THEME_PRIMARY_COLOR="#3399ff"
-NEXT_PUBLIC_AUTH_ENABLED=true
-NEXT_PUBLIC_AUTH_PASSWORDS=1
-```
+Create a `.env.local` file of `.env.example`.
 
 ## Generate Open Graph Image
 
@@ -44,7 +31,6 @@ curl http://localhost:3000/api/revalidate?token=xxxxxx&path=/path/to
 
 - `token`: replace with your `NEXT_PUBLIC_REVALIDATE_TOKEN`.
 - `path`: the exact path that you want revalidated.
-
 
 ## License
 
